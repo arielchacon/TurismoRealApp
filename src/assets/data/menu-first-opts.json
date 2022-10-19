@@ -1,0 +1,10 @@
+[{
+    "icon": "log-in-outline",
+    "name": "Iniciar sesion",
+    "redirectTo":"/login"
+},
+{
+    "icon": "person-add-outline",
+    "name": "Registrar usuario",
+    "redirectTo":"/registro-cliente"
+}]
