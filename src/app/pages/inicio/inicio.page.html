@@ -13,4 +13,18 @@
 
 <ion-content>
 
+  <ion-slides pager="ios" class="slide-full" [options]="{ slidesPerView:1, autoplay: {delay: 3000} }">
+    <ion-slide *ngFor="let slide of slides">     
+      <ion-card>
+        <img [src]='slide.img'  class="slide-image">
+        <ion-card-header>
+          <ion-card-subtitle>{{slide.titulo}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+             {{slide.desc}}
+        </ion-card-content>
+    </ion-card>
+    </ion-slide>
+  </ion-slides>
+
 </ion-content>
