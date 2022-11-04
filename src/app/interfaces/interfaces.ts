@@ -62,3 +62,13 @@ export interface Comuna {
     idProvincia: number
     
 }
+
+export interface Edificio {
+
+    idEdificio: number,
+    nombre: string;
+    direccion: string;
+    idComuna: number;
+    estado: string;
+    
+}

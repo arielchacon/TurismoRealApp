@@ -23,6 +23,26 @@ const routes: Routes = [
     path: 'loading',
     loadChildren: () => import('./pages/loading/loading.module').then( m => m.LoadingPageModule)
   },
+  {
+    path: 'edificios',
+    loadChildren: () => import('./pages/edificios/edificios.module').then( m => m.EdificiosPageModule)
+  },
+  {
+    path: 'servicios',
+    loadChildren: () => import('./pages/servicios/servicios.module').then( m => m.ServiciosPageModule)
+  },
+  {
+    path: 'registro-reserva',
+    loadChildren: () => import('./pages/registro-reserva/registro-reserva.module').then( m => m.RegistroReservaPageModule)
+  },
+  {
+    path: 'reservas',
+    loadChildren: () => import('./pages/reservas/reservas.module').then( m => m.ReservasPageModule)
+  },
+  {
+    path: 'cliente',
+    loadChildren: () => import('./pages/cliente/cliente.module').then( m => m.ClientePageModule)
+  },
 ];
 
 @NgModule({
