@@ -9,12 +9,15 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DataService } from './services/data.service';
+import { DireccionService } from './services/direccion.service';
 
 
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
-  providers: [DataService, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [DataService, 
+              DireccionService,
+              { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

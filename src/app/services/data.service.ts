@@ -14,4 +14,21 @@ export class DataService {
     return this.http.get<Componente[]>('/assets/data/menu-first-opts.json');
 
   }
+
+  getMenuClientOpts() {
+
+    return this.http.get<Componente[]>('/assets/data/menu-cliente-opts.json');
+
+  }
+
+  getMenuEmployeeOpts() {
+
+    return this.http.get<Componente[]>('/assets/data/menu-empleado-opts.json');
+  }
+
+  getMenuAdminOpts() {
+
+    return this.http.get<Componente[]>('/assets/data/menu-admin-opts.json');
+
+  }
 }

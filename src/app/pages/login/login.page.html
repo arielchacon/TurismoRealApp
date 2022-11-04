@@ -2,16 +2,30 @@
 
 <ion-content class="ion-padding">
 
+  <div *ngIf="!isLogged">
+
+  <form (ngSubmit)="onLogin( fLogin )" #fLogin="ngForm">
+
   <ion-item fill="outline">
     <ion-label position="floating">Nombre de usuario</ion-label>
-    <ion-input placeholder="Usuario"></ion-input>
+    <ion-input name="nombreUsuario" type="text" placeholder="Usuario" [(ngModel)]="usuario.nombreUsuario"></ion-input>
   </ion-item>
   <br>
   <ion-item fill="outline">
     <ion-label position="floating">Password</ion-label>
-    <ion-input placeholder="Password" type="password"></ion-input>
+    <ion-input name="password" placeholder="Password" type="password" [(ngModel)]="usuario.password"></ion-input>
   </ion-item>
   <br>
-  <ion-button expand="block">Iniciar Sesión</ion-button>
+  <ion-button type="submit" expand="block">Iniciar Sesión</ion-button>
+</form>
+</div>
+<div *ngIf="isLogged">
+  <br><br>
+  <ion-text color="primary" text-center>
+    <h1>Bienvenido <b>{{ nombreUser }}</b></h1>
+  </ion-text>
+  <br>
 
+  <ion-button expand="full" (click)="redirectInicio()" color="tertiary">Continuar</ion-button>
+</div>
 </ion-content>

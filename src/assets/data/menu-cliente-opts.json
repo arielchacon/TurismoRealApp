@@ -1,0 +1,25 @@
+[{
+    "icon": "business-outline",
+    "name": "Ver edificios",
+    "redirectTo":"/edificios"
+},
+{
+    "icon": "clipboard-outline",
+    "name": "Ver servicios",
+    "redirectTo":"/servicios"
+},
+{
+    "icon": "calendar-outline",
+    "name": "Realizar reserva",
+    "redirectTo":"/registro-reserva"
+},
+{
+    "icon": "calendar-number-outline",
+    "name": "Mis reservas",
+    "redirectTo":"/reservas"
+},
+{
+    "icon": "settings-outline",
+    "name": "Datos personales",
+    "redirectTo":"/cliente"
+}]

@@ -6,13 +6,19 @@ export interface Componente {
   
 }
 
-export interface Usuario {
+export interface JwtModel {
 
-    idUsuario: number;
+    token?: string;
+    type?: string;
+    nombreUsuario?: string;
+    authorities?: string[];
+
+}
+
+export interface LoginUsuario {
+
     nombreUsuario: string;
-    estado: string;
-    rol: string;
-
+    password: string;
 }
 
 export interface Cliente {
@@ -23,7 +29,7 @@ export interface Cliente {
     apMaterno: string;
     genero: string;
     direccion: string;
-    fechaNacimiento: Date;
+    fechaNacimiento: any;
     telefono: string;
     telefono2?: string;
     correo: string;
@@ -32,4 +38,27 @@ export interface Cliente {
     nombreUsuario: string;
     password: string;
 
+}
+
+export interface Region {
+
+    idRegion: number,
+    nombre: string
+
+}
+
+export interface Provincia {
+
+    idProvincia: number,
+    nombre: string,
+    idRegion: number
+
+}
+
+export interface Comuna {
+
+    idComuna: number,
+    nombre: string,
+    idProvincia: number
+    
 }
