@@ -1,12 +1,12 @@
 [{
     "icon": "business-outline",
-    "name": "Ver edificios",
-    "redirectTo":"/edificios"
+    "name": "Ver departamentos",
+    "redirectTo":"/ver-edificios"
 },
 {
     "icon": "clipboard-outline",
     "name": "Ver servicios",
-    "redirectTo":"/servicios"
+    "redirectTo":"/ver-servicios"
 },
 {
     "icon": "calendar-outline",

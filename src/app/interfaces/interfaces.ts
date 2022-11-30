@@ -65,10 +65,17 @@ export interface Comuna {
 
 export interface Edificio {
 
-    idEdificio: number,
-    nombre: string;
     direccion: string;
-    idComuna: number;
     estado: string;
+    idComuna: number;
+    nombre: string;
+
+}
+
+export interface Servicio {
+
+    descripcion: string;
+    estado: string;
+    monto: number;
     
 }

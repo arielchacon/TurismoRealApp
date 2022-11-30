@@ -1,5 +1,26 @@
-<app-header titulo="Servicios"></app-header>
+<app-header titulo="Registrar Servicios"></app-header>
 
 <ion-content>
+
+    <form (ngSubmit)="registrarServicio( fRegistro )" #fRegistro="ngForm">
+
+        <ion-item fill="outline">
+            <ion-label position="floating">Descripcion</ion-label>
+            <ion-input name="descripcion" type="text" placeholder="Descripcion" [(ngModel)]="servicio.descripcion" ></ion-input>
+          </ion-item>
+        <br>
+        <ion-item fill="outline">
+            <ion-label position="floating">Estado</ion-label>
+            <ion-input name="estado" type="text" placeholder="Estado" [(ngModel)]="servicio.estado" ></ion-input>
+        </ion-item>
+        <br>
+        <ion-item fill="outline">
+            <ion-label position="floating">Monto $</ion-label>
+            <ion-input name="monto" type="number" placeholder="0" [(ngModel)]="servicio.monto" ></ion-input>
+        </ion-item>
+        <br>
+        <ion-button type="submit" expand="block">Guardar</ion-button>
+
+    </form>
 
 </ion-content>

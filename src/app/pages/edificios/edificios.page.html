@@ -1,5 +1,46 @@
-<app-header titulo="Edificios"></app-header>
+<app-header titulo="Agregar edificios"></app-header>
 
 <ion-content>
+
+    <form (ngSubmit)="registrarEdificio( fRegistro )" #fRegistro="ngForm">
+
+        <ion-item fill="outline">
+            <ion-label position="floating">Nombre del edificio</ion-label>
+            <ion-input name="nombre" type="text" placeholder="Nombre" [(ngModel)]="edificio.nombre" ></ion-input>
+          </ion-item>
+        <br>
+        <ion-item fill="outline">
+            <ion-label position="floating">Direccion</ion-label>
+            <ion-input name="direccion" type="text" placeholder="Direccion" [(ngModel)]="edificio.direccion" ></ion-input>
+          </ion-item>
+        <br>
+        <ion-item fill="outline">
+            <ion-label>Region</ion-label>
+            <ion-select name="region" placeholder="Region" [(ngModel)]="region" (ionChange)="setValueProvincia()">
+              <ion-select-option *ngFor="let region of (regiones | async)" [value]="region.idRegion">{{region.nombre}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <br>
+        <ion-item fill="outline">
+            <ion-label>Provincia</ion-label>
+            <ion-select name="provincia" placeholder="Provincia" [(ngModel)]="provincia" (ionChange)="setValueComuna()">
+              <ion-select-option *ngFor="let provincia of (provincias | async)" value="{{provincia.idProvincia}}">{{provincia.nombre}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <br>
+        <ion-item fill="outline">
+            <ion-label>Comuna</ion-label>
+            <ion-select name="comuna" placeholder="Comuna" [(ngModel)]="comuna">
+              <ion-select-option *ngFor="let comuna of (comunas | async)" [value]="comuna.idComuna">{{comuna.nombre}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <br>
+        <ion-item fill="outline">
+            <ion-label position="floating">Estado</ion-label>
+            <ion-input name="estado" type="text" placeholder="Estado" [(ngModel)]="edificio.estado" ></ion-input>
+        </ion-item>
+        <br>
+        <ion-button type="submit" expand="block">Guardar</ion-button>
+    </form>
 
 </ion-content>
