@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { VerEdificiosPageRoutingModule } from './ver-edificios-routing.module';
 
 import { VerEdificiosPage } from './ver-edificios.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    VerEdificiosPageRoutingModule
+    VerEdificiosPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [VerEdificiosPage]
 })

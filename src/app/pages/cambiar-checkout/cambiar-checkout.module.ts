@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { CambiarCheckoutPageRoutingModule } from './cambiar-checkout-routing.module';
 
 import { CambiarCheckoutPage } from './cambiar-checkout.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CambiarCheckoutPageRoutingModule
+    CambiarCheckoutPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [CambiarCheckoutPage]
 })

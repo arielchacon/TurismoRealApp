@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { CambiarCheckinPageRoutingModule } from './cambiar-checkin-routing.module';
 
 import { CambiarCheckinPage } from './cambiar-checkin.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CambiarCheckinPageRoutingModule
+    CambiarCheckinPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [CambiarCheckinPage]
 })

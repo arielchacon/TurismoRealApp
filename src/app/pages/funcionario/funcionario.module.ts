@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { FuncionarioPageRoutingModule } from './funcionario-routing.module';
 
 import { FuncionarioPage } from './funcionario.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FuncionarioPageRoutingModule
+    FuncionarioPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [FuncionarioPage]
 })

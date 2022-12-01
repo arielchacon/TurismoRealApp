@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { AgregarObjetoPageRoutingModule } from './agregar-objeto-routing.module';
 
 import { AgregarObjetoPage } from './agregar-objeto.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AgregarObjetoPageRoutingModule
+    AgregarObjetoPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [AgregarObjetoPage]
 })

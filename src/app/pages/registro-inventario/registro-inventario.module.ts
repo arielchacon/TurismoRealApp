@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { RegistroInventarioPageRoutingModule } from './registro-inventario-routing.module';
 
 import { RegistroInventarioPage } from './registro-inventario.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RegistroInventarioPageRoutingModule
+    RegistroInventarioPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [RegistroInventarioPage]
 })

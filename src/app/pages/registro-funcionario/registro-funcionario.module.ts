@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { RegistroFuncionarioPageRoutingModule } from './registro-funcionario-routing.module';
 
 import { RegistroFuncionarioPage } from './registro-funcionario.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RegistroFuncionarioPageRoutingModule
+    RegistroFuncionarioPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [RegistroFuncionarioPage]
 })

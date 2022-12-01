@@ -1,0 +1,70 @@
+[{
+    "icon": "home-outline",
+    "name": "Ver departamentos",
+    "redirectTo":"/ver-edificios"
+},
+{
+    "icon": "business-outline",
+    "name": "Agregar edificio",
+    "redirectTo":"/edificios"
+},
+{
+    "icon": "add-outline",
+    "name": "Agregar departamento",
+    "redirectTo":"/registro-departamento"
+},
+{
+    "icon": "clipboard-outline",
+    "name": "Agregar servicios",
+    "redirectTo":"/servicios"
+},
+{
+    "icon": "fast-food-outline",
+    "name": "Ver servicios",
+    "redirectTo":"/ver-servicios"
+},
+{
+    "icon": "calendar-outline",
+    "name": "Realizar Check-In",
+    "redirectTo":"/registro-reserva"
+},
+{
+    "icon": "calendar-number-outline",
+    "name": "Realizar Check-Out",
+    "redirectTo":"/reservas"
+},
+{
+    "icon": "settings-outline",
+    "name": "Datos personales",
+    "redirectTo":"/funcionario"
+},
+{
+    "icon": "construct-outline",
+    "name": "Agregar mantencion",
+    "redirectTo":"/registro-mantencion"
+},
+{
+    "icon": "construct-outline",
+    "name": "Agregar inventario",
+    "redirectTo":"/registro-inventario"
+},
+{
+    "icon": "document-text-outline",
+    "name": "Agregar objeto",
+    "redirectTo":"/agregar-objeto"
+},
+{
+    "icon": "people-outline",
+    "name": "Ver clientes",
+    "redirectTo":"/ver-usuarios-cliente"
+},
+{
+    "icon": "people-circle-outline",
+    "name": "Ver funcionarios",
+    "redirectTo":"/ver-usuarios-funcionario"
+},
+{
+    "icon": "person-add-outline",
+    "name": "Agregar funcionario",
+    "redirectTo":"/registro-funcionario"
+}]
