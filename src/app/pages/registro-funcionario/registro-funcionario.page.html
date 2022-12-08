@@ -1,9 +1,112 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>registro-funcionario</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header titulo="Registro funcionario"></app-header>
 
 <ion-content>
+
+  <form (ngSubmit)="registrarFuncionario( fRegistro )" #fRegistro="ngForm">
+
+    <ion-item fill="outline">
+      <ion-label position="floating">Nombres</ion-label>
+      <ion-input name="nombre" type="text" placeholder="Nombres" [(ngModel)]="funcionario.nombre" ></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">Apellido Paterno</ion-label>
+      <ion-input name="apPaterno" type="text" placeholder="Apellido paterno" [(ngModel)]="funcionario.appaterno" ></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">Apellido Materno</ion-label>
+      <ion-input name="apMaterno" type="text" placeholder="Apellido materno" [(ngModel)]="funcionario.apmaterno" ></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">RUN</ion-label>
+      <ion-input name="run" type="text" placeholder="11.111.111-1" [(ngModel)]="funcionario.run" ></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label>Genero</ion-label>
+      <ion-select name="genero" placeholder="Genero" [(ngModel)]="funcionario.genero" >
+        <ion-select-option value="M">Masculino</ion-select-option>
+        <ion-select-option value="F">Femenino</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label>Fecha de Nacimiento</ion-label>
+      <ion-datetime-button datetime="datetime" ></ion-datetime-button>
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime name="fechaNacimiento" id="datetime" presentation="date" locale="es-ES" [(ngModel)]="funcionario.fechaNacimiento"></ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">Direccion</ion-label>
+      <ion-input name="direccion" type="text" placeholder="Direccion" [(ngModel)]="funcionario.direccion" ></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label>Region</ion-label>
+      <ion-select name="region" placeholder="Region" [(ngModel)]="region" (ionChange)="setValueProvincia()">
+        <ion-select-option *ngFor="let region of (regiones | async)" [value]="region.idRegion">{{region.nombre}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label>Provincia</ion-label>
+      <ion-select name="provincia" placeholder="Provincia" [(ngModel)]="provincia" (ionChange)="setValueComuna()">
+        <ion-select-option *ngFor="let provincia of (provincias | async)" value="{{provincia.idProvincia}}">{{provincia.nombre}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label>Comuna</ion-label>
+      <ion-select name="comuna" placeholder="Comuna" [(ngModel)]="comuna">
+        <ion-select-option *ngFor="let comuna of (comunas | async)" [value]="comuna.idComuna">{{comuna.nombre}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">Telefono</ion-label>
+      <ion-input name="telefono" type="text" placeholder="+5699999999" [(ngModel)]="funcionario.telefono" ></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">Correo electrónico</ion-label>
+      <ion-input name="correo" type="email" placeholder="ejemplo@mail.com" [(ngModel)]="funcionario.correo" ></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">Cargo</ion-label>
+      <ion-input name="cargo" type="text" placeholder="Cargo" [(ngModel)]="funcionario.cargo" ></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">Estado</ion-label>
+      <ion-input name="estado" type="text" placeholder="Estado" [(ngModel)]="funcionario.estado" ></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label>Rol</ion-label>
+      <ion-select name="rol" placeholder="Rol" [(ngModel)]="funcionario.idRol" >
+        <ion-select-option value="1">Administrador</ion-select-option>
+        <ion-select-option value="2">Empleados</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">Nombre de usuario</ion-label>
+      <ion-input name="nombreUsuario" type="text" placeholder="Nombre de usuario" [(ngModel)]="funcionario.nombreUsuario" ></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input name="password" placeholder="Password" type="password" [(ngModel)]="funcionario.password" ></ion-input>
+    </ion-item>
+    <br>
+    <ion-button type="submit" expand="block">Registrar</ion-button>
+  </form>
 
 </ion-content>

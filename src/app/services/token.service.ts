@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 const TOKEN_KEY = 'AuthToken';
 const USERNAME_KEY =  'AuthUserName';
@@ -11,7 +12,7 @@ export class TokenService {
 
   roles: Array<string> = [];
 
-  constructor() { }
+  constructor(private navCtrl: NavController) { }
 
   public setToken(token: string): void{
     window.sessionStorage.removeItem(TOKEN_KEY);
@@ -52,5 +53,8 @@ export class TokenService {
 
   public logOut(): void {
     window.sessionStorage.clear();
+    window.location.reload();
+    this.navCtrl.navigateRoot('/inicio', {animated: true})
+
   }
 }

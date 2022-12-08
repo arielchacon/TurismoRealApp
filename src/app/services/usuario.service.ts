@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Cliente, JwtModel, LoginUsuario } from '../interfaces/interfaces';
+import { Cliente, JwtModel, LoginUsuario, Funcionario } from '../interfaces/interfaces';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
@@ -28,6 +28,22 @@ export class UsuarioService {
     return new Promise( resolve => {
 
       this.http.post(`${ URL }/usuario/registrar`, cliente)
+          .subscribe(async resp => {
+            if(resp['ok']){
+              resolve(true);
+            }else{
+              resolve(false);
+            }
+          })
+    });
+
+  }
+
+  registroFuncionario( funcionario: Funcionario){
+
+    return new Promise( resolve => {
+
+      this.http.post(`${ URL }/funcionario/registrar`, funcionario)
           .subscribe(async resp => {
             if(resp['ok']){
               resolve(true);

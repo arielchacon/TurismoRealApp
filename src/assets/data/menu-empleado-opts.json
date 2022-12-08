@@ -1,36 +1,21 @@
 [{
+    "icon": "calendar-outline",
+    "name": "Ver Check-In",
+    "redirectTo":"/registro-reserva"
+},
+{
+    "icon": "calendar-number-outline",
+    "name": "Ver Check-Out",
+    "redirectTo":"/reservas"
+},
+{
     "icon": "home-outline",
     "name": "Ver departamentos",
     "redirectTo":"/ver-edificios"
 },
 {
-    "icon": "business-outline",
-    "name": "Agregar edificio",
-    "redirectTo":"/edificios"
-},
-{
-    "icon": "add-outline",
-    "name": "Agregar departamento",
-    "redirectTo":"/registro-departamento"
-},
-{
-    "icon": "clipboard-outline",
-    "name": "Agregar servicios",
-    "redirectTo":"/servicios"
-},
-{
-    "icon": "fast-food-outline",
-    "name": "Ver servicios",
-    "redirectTo":"/ver-servicios"
-},
-{
-    "icon": "calendar-outline",
-    "name": "Realizar Check-In",
-    "redirectTo":"/registro-reserva"
-},
-{
     "icon": "calendar-number-outline",
-    "name": "Realizar Check-Out",
+    "name": "Reservas",
     "redirectTo":"/reservas"
 },
 {
@@ -39,17 +24,7 @@
     "redirectTo":"/funcionario"
 },
 {
-    "icon": "construct-outline",
-    "name": "Agregar mantencion",
-    "redirectTo":"/registro-mantencion"
-},
-{
-    "icon": "construct-outline",
-    "name": "Agregar inventario",
-    "redirectTo":"/registro-inventario"
-},
-{
-    "icon": "document-text-outline",
-    "name": "Agregar objeto",
-    "redirectTo":"/agregar-objeto"
+    "icon": "exit-outline",
+    "name": "Cerrar sesión",
+    "redirectTo":"/logout"
 }]

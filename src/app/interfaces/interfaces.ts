@@ -44,8 +44,8 @@ export interface Funcionario {
 
     run: string;
     nombre: string;
-    apPaterno: string;
-    apMaterno: string;
+    appaterno: string;
+    apmaterno: string;
     genero: string;
     direccion: string;
     fechaNacimiento: any;

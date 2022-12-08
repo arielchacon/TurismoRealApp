@@ -1,9 +1,4 @@
 [{
-    "icon": "business-outline",
-    "name": "Ver departamentos",
-    "redirectTo":"/ver-edificios"
-},
-{
     "icon": "clipboard-outline",
     "name": "Ver servicios",
     "redirectTo":"/ver-servicios"
@@ -22,4 +17,9 @@
     "icon": "settings-outline",
     "name": "Datos personales",
     "redirectTo":"/cliente"
+},
+{
+    "icon": "exit-outline",
+    "name": "Cerrar sesión",
+    "redirectTo":"/login"
 }]

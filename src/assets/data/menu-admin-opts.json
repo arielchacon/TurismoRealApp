@@ -67,4 +67,9 @@
     "icon": "person-add-outline",
     "name": "Agregar funcionario",
     "redirectTo":"/registro-funcionario"
+},
+{
+    "icon": "exit-outline",
+    "name": "Cerrar sesión",
+    "redirectTo":"/logout"
 }]
