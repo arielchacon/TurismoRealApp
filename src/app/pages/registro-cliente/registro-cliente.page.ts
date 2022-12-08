@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Cliente } from '../../interfaces/interfaces';
 import { NgForm } from '@angular/forms';
 import { UsuarioService } from '../../services/usuario.service';
+import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-registro-cliente',
@@ -19,6 +20,7 @@ export class RegistroClientePage implements OnInit {
   provincia: any;
   comunas: Observable<Comuna[]>;
   comuna: any;
+  errorMsg = '';
   cliente: Cliente = {
     run: '',
     nombre: '',
@@ -35,7 +37,10 @@ export class RegistroClientePage implements OnInit {
     password: ''
   };
 
-  constructor(public direccionService: DireccionService, public usuarioService: UsuarioService) { }
+  constructor(public direccionService: DireccionService, 
+              public usuarioService: UsuarioService, 
+              private alertController: AlertController,
+              private navCtrl: NavController) { }
 
   ngOnInit() {
 
@@ -54,12 +59,32 @@ export class RegistroClientePage implements OnInit {
 
   }
 
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Fail en el registro',
+      message: this.errorMsg,
+      buttons: ['Aceptar']
+    });
+
+    await alert.present();
+  }
+
   async registrarCliente(fRegistro: NgForm){
 
     this.cliente.idComuna=this.comuna;
     this.cliente.esFrecuente=false;
 
-    this.usuarioService.registroCliente(this.cliente);
+    const valido = this.usuarioService.registroCliente(this.cliente);
+
+    if( valido ){
+
+      this.navCtrl.navigateRoot('inicio', {animated: true});
+
+    }else {
+
+      this.presentAlert();
+
+    }
 
   }
 
