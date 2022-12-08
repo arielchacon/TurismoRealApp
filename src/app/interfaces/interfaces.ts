@@ -267,3 +267,236 @@ export interface VehiculoResponse {
 
 }
 
+export interface ActualizarCheckIn {
+
+    idCheckin: number;
+    fecha: any;
+    abono: number;
+    runFuncionario: string;
+    idReserva: number;
+
+}
+
+export interface ActualizarCheckOut {
+
+    idCheckout: number;
+    fecha: any;
+    multa: number;
+    runFuncionario: string;
+    idReserva: number;
+
+}
+
+export interface ActualizarCliente {
+
+    nombre: string;
+    appaterno: string;
+    apmaterno: string;
+    genero: string;
+    direccion: string;
+    fechaNacimiento: any;
+    telefono: string;
+    telefono_2: string;
+    correo: string;
+    esFrecuente: boolean;
+    idComuna: number;
+
+}
+
+export interface ActualizarDepartamento {
+
+    numDepto: number;
+    numHabitaciones: number;
+    numBanios: number;
+    estado: string;
+    valor: number;
+    imagen: any;
+    dividendo: number;
+    contribucion: number;
+    disponibilidad: string;
+    runFuncionario: string;
+
+}
+
+export interface ActualizarEdificio {
+
+    direccion: string;
+    estado: string;
+    id_comuna: number;
+    nombre: string;
+
+}
+
+export interface ActualizarFuncionario {
+
+    nombre: string;
+    appaterno: string;
+    apmaterno: string;
+    genero: string;
+    direccion: string;
+    fechaNacimiento: any;
+    telefono: string;
+    correo: string;
+    cargo: string;
+    estado: string;
+    idComuna: number;
+
+}
+
+export interface ActualizarInventario {
+
+    idInventario: number;
+    observacion: string;
+    fechaInventario: any;
+    estado: string;
+    idDepartamento: number;
+
+}
+
+export interface ActualizarMantenimiento {
+
+    idMantenimiento: number;
+    descripcion: string;
+    estado: string;
+    fechaMantencion: any;
+    costo: number;
+    idDepartamento: number;
+
+}
+
+export interface ActualizarReserva {
+
+    idReserva: number;
+    fechaReserva: any;
+    cantDeptos: number;
+    monto: number;
+    estado: string;
+
+}
+
+export interface ActualizarServicio {
+
+    idServicio: number;
+    descripcion: string;
+    estado: string;
+    monto: number;
+
+}
+
+export interface ActualizarUsuario {
+
+    nombreUsuario: string;
+    oldPassword: string;
+    newPssword: string;
+
+}
+
+export interface ActualizarVehiculo {
+
+    idVehiculo: number;
+    patente: string;
+    annio: string;
+    idModelo: number;
+    idColor: number;
+    nombreConductor: string;
+
+}
+
+export interface Inventario {
+
+    observacion: string;
+    fechaInventario: any;
+    estado: string;
+    idDepartamento: number;
+
+}
+
+export interface Mantenimiento {
+
+    descripcion: string;
+    estado: string;
+    fechaMantencion: any;
+    costo: number;
+    idMantenimiento: number;
+
+}
+
+export interface ObjetoInventario {
+
+    idInventario: number;
+    sku: string;
+
+}
+
+export interface Reserva {
+
+    cantDepartamento: number;
+    fechaReserva: any;
+    monto: number;
+    estado: string;
+    fechaCheckin: any;
+    abono: number;
+    runFuncionario: string;
+    fechaCheckout: any;
+    multa: number;
+    idDepartamento: number;
+
+}
+
+export interface ReservaServicio {
+
+    idServicio: number;
+    idReserva: number;
+    fechaInicio: any;
+    horaInicio: string;
+    fechaTermino: any;
+    horaTermino: string;
+
+}
+
+export interface ServicioTransporte {
+
+    idReserva: number;
+    idTransporte: number;
+
+}
+
+export interface Transporte {
+
+    direccionDesde: string;
+    direccionHasta: string;
+    horaInicio: string;
+    fechaInicio: any;
+    monto: number;
+    estado: string;
+    idVehiculo: number;
+    idReserva: number;
+
+}
+
+export interface Vehiculo {
+
+    patente: string;
+    annio: string;
+    idModelo: number;
+    idColor: number;
+    nombreConductor: string;
+
+}
+
+export interface Departamento {
+
+    numDepto: number;
+    numHabitaciones: number;
+    numBanios: number;
+    estado: string;
+    valor: number;
+    imagen: any;
+    dividendo: number;
+    contribucion: number;
+    disponibilidad: string;
+    idEdificio: number;
+    runFuncionario: string;
+
+}
+
