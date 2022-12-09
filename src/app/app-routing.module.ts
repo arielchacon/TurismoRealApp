@@ -95,6 +95,10 @@ const routes: Routes = [
     path: 'ver-reservas',
     loadChildren: () => import('./pages/ver-reservas/ver-reservas.module').then( m => m.VerReservasPageModule)
   },
+  {
+    path: 'cambiar-reserva',
+    loadChildren: () => import('./pages/cambiar-reserva/cambiar-reserva.module').then( m => m.CambiarReservaPageModule)
+  },
 ];
 
 @NgModule({

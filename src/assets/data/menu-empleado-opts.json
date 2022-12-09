@@ -1,12 +1,12 @@
 [{
     "icon": "calendar-outline",
-    "name": "Ver Check-In",
-    "redirectTo":"/registro-reserva"
+    "name": "Cambiar Check-In",
+    "redirectTo":"/cambiar-checkin"
 },
 {
     "icon": "calendar-number-outline",
-    "name": "Ver Check-Out",
-    "redirectTo":"/reservas"
+    "name": "Cambiar Check-Out",
+    "redirectTo":"/cambiar-checkout"
 },
 {
     "icon": "home-outline",
@@ -17,6 +17,11 @@
     "icon": "calendar-number-outline",
     "name": "Ver Reservas",
     "redirectTo":"/ver-reservas"
+},
+{
+    "icon": "calendar-number-outline",
+    "name": "Cambiar Reserva",
+    "redirectTo":"/cambiar-reserva"
 },
 {
     "icon": "settings-outline",

@@ -235,7 +235,7 @@ export interface ReservaResponse {
     runCliente: string;
     idReserva: number;
     cantDepartamento: number;
-    fechaReserva: Date;
+    fechaReserva: any;
     monto: number;
     estado: string;
 

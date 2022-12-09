@@ -1,0 +1,36 @@
+<app-header titulo="Modificar reserva"></app-header>
+
+<ion-content class="ion-padding">
+
+  <form (ngSubmit)="buscarReserva(fBuscar)" #fBuscar="ngForm">
+    <ion-item fill="outline">
+      <ion-label position="floating">ID Reserva</ion-label>
+      <ion-input name="idReserva" type="text" placeholder="1900-01-01" [(ngModel)]="reserva.idReserva"></ion-input>
+    </ion-item>
+    <br>
+    <ion-button type="submit" expand="block">Buscar</ion-button>
+  </form>
+  <br>
+  <br>
+  <form (ngSubmit)="actualizarReserva( fActualizar )" #fActualizar="ngForm">
+    <ion-item fill="outline">
+      <ion-label position="stacked">Fecha Reserva</ion-label>
+      <ion-input name="fechaReserva" type="text" placeholder="1900-01-01" [(ngModel)]="reserva.fechaReserva"
+        disabled="true"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="stacked">Monto</ion-label>
+      <ion-input name="monto" type="text" placeholder="0" [(ngModel)]="reserva.monto"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="stacked">Estado</ion-label>
+      <ion-input name="estado" type="text" placeholder="Estado" [(ngModel)]="reserva.estado"></ion-input>
+    </ion-item>
+    <ion-button type="submit" expand="block">Actualizar</ion-button>
+
+  </form>
+
+
+</ion-content>

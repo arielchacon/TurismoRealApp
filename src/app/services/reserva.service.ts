@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ActualizarReserva, Reserva, ReservaResponse, ReservaServicio, ReservaDepartamentoResponse, ReservaServicioResponse, CheckInResponse, CheckOutResponse, ActualizarCheckIn, ActualizarCheckOut, ServicioTransporte, ReservaTransporteResponse } from '../interfaces/interfaces';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -93,7 +94,7 @@ export class ReservaService {
 
   }
 
-  buscarReservaId(idReserva: number){
+  buscarReservaId(idReserva: number): Observable<ReservaResponse> {
 
     return this.http.get<ReservaResponse>(`http://localhost:8888/reservas/buscar-id/${ idReserva }`);
 

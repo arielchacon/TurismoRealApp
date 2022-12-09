@@ -8,14 +8,8 @@
         </ion-item>
         <br>
         <ion-item fill="outline">
-            <ion-label>Fecha de Check-In</ion-label>
-            <ion-datetime-button datetime="datetime"></ion-datetime-button>
-            <ion-modal [keepContentsMounted]="true">
-                <ng-template>
-                    <ion-datetime name="fechaCheckin" id="datetime" presentation="date" locale="es-ES"
-                        [(ngModel)]="reserva.fechaCheckin"></ion-datetime>
-                </ng-template>
-            </ion-modal>
+            <ion-label position="floating">Fecha Check-in</ion-label>
+            <ion-input name="fechaCheckin" type="text" placeholder="1900-01-01" [(ngModel)]="reserva.fechaCheckin"></ion-input>
         </ion-item>
         <br>
         <ion-item fill="outline">
@@ -24,14 +18,8 @@
         </ion-item>
         <br>
         <ion-item fill="outline">
-            <ion-label>Fecha de Check-Out</ion-label>
-            <ion-datetime-button datetime="datetime"></ion-datetime-button>
-            <ion-modal [keepContentsMounted]="true">
-                <ng-template>
-                    <ion-datetime name="fechaCheckout" id="datetime" presentation="date" locale="es-ES"
-                        [(ngModel)]="reserva.fechaCheckout"></ion-datetime>
-                </ng-template>
-            </ion-modal>
+            <ion-label position="floating">Fecha Check-out</ion-label>
+            <ion-input name="fechaCheckout" type="text" placeholder="1900-01-01" [(ngModel)]="reserva.fechaCheckout"></ion-input>
         </ion-item>
         <br>
         <ion-item fill="outline">
