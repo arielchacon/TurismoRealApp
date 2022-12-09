@@ -1,0 +1,19 @@
+<app-header titulo="Reservas"></app-header>
+
+<ion-content class="ion-padding">
+
+  <ion-list>
+
+      <ion-item *ngFor="let reserva of reservas | async">
+  
+          <ion-label>
+              <h3>ID {{reserva.idReserva}}</h3>
+              <p>{{reserva.estado}} </p>
+          </ion-label>
+          <ion-label>${{reserva.monto}}</ion-label>
+  
+      </ion-item>
+  
+  </ion-list>
+
+</ion-content>

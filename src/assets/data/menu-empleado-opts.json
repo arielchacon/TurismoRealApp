@@ -15,8 +15,8 @@
 },
 {
     "icon": "calendar-number-outline",
-    "name": "Reservas",
-    "redirectTo":"/reservas"
+    "name": "Ver Reservas",
+    "redirectTo":"/ver-reservas"
 },
 {
     "icon": "settings-outline",

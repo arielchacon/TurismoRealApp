@@ -1,6 +1,81 @@
 <app-header titulo="Registrar reserva"></app-header>
-<ion-content>
+<ion-content class="ion-padding">
 
-    
+    <form (ngSubmit)="registrarReserva( fRegistro )" #fRegistro="ngForm">
+        <ion-item fill="outline">
+            <ion-label position="floating">RUN</ion-label>
+            <ion-input name="run" type="text" placeholder="11111111-1" [(ngModel)]="reserva.runCliente"></ion-input>
+        </ion-item>
+        <br>
+        <ion-item fill="outline">
+            <ion-label>Fecha de Check-In</ion-label>
+            <ion-datetime-button datetime="datetime"></ion-datetime-button>
+            <ion-modal [keepContentsMounted]="true">
+                <ng-template>
+                    <ion-datetime name="fechaCheckin" id="datetime" presentation="date" locale="es-ES"
+                        [(ngModel)]="reserva.fechaCheckin"></ion-datetime>
+                </ng-template>
+            </ion-modal>
+        </ion-item>
+        <br>
+        <ion-item fill="outline">
+            <ion-label position="floating">Abono</ion-label>
+            <ion-input name="abono" type="text" placeholder="0" [(ngModel)]="reserva.abono"></ion-input>
+        </ion-item>
+        <br>
+        <ion-item fill="outline">
+            <ion-label>Fecha de Check-Out</ion-label>
+            <ion-datetime-button datetime="datetime"></ion-datetime-button>
+            <ion-modal [keepContentsMounted]="true">
+                <ng-template>
+                    <ion-datetime name="fechaCheckout" id="datetime" presentation="date" locale="es-ES"
+                        [(ngModel)]="reserva.fechaCheckout"></ion-datetime>
+                </ng-template>
+            </ion-modal>
+        </ion-item>
+        <br>
+        <ion-item fill="outline">
+            <ion-label>Region</ion-label>
+            <ion-select name="region" placeholder="Region" [(ngModel)]="region" (ionChange)="setValueProvincia()">
+                <ion-select-option *ngFor="let region of (regiones | async)"
+                    [value]="region.idRegion">{{region.nombre}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <br>
+        <ion-item fill="outline">
+            <ion-label>Provincia</ion-label>
+            <ion-select name="provincia" placeholder="Provincia" [(ngModel)]="provincia" (ionChange)="setValueComuna()">
+                <ion-select-option *ngFor="let provincia of (provincias | async)"
+                    value="{{provincia.idProvincia}}">{{provincia.nombre}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <br>
+        <ion-item fill="outline">
+            <ion-label>Comuna</ion-label>
+            <ion-select name="comuna" placeholder="Comuna" [(ngModel)]="comuna" (ionChange)="setValueEdificio()">
+                <ion-select-option *ngFor="let comuna of (comunas | async)"
+                    [value]="comuna.idComuna">{{comuna.nombre}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <br>
+        <ion-item fill="outline">
+            <ion-label>Edificio</ion-label>
+            <ion-select name="edificio" placeholder="Edificio" [(ngModel)]="edificio"
+                (ionChange)="setValueDepartamento()">
+                <ion-select-option *ngFor="let edificio of (edificios | async)"
+                    [value]="edificio.idEdificio">{{edificio.nombre}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <br>
+        <ion-item fill="outline">
+            <ion-label>Departamento</ion-label>
+            <ion-select name="departamento" placeholder="Departamento" [(ngModel)]="departamento">
+                <ion-select-option *ngFor="let departamento of (departamentos | async)"
+                    [value]="departamento.idDepartamento">{{departamento.numDepartamento}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-button type="submit" expand="block">Reservar</ion-button>
+
+    </form>
 
 </ion-content>

@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Cliente, JwtModel, LoginUsuario, Funcionario } from '../interfaces/interfaces';
+import { Cliente, JwtModel, LoginUsuario, Funcionario, InfoCliente } from '../interfaces/interfaces';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 
 const URL = environment.url;
 const cabecera = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
+const USERNAME_KEY =  'AuthUserName';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,7 @@ const cabecera = {headers: new HttpHeaders({'Content-Type': 'application/json'})
 export class UsuarioService {
 
   token: string = null;
+  rut: string;
   private usuario: JwtModel = {};
 
   constructor(private http: HttpClient) { }
@@ -52,6 +54,24 @@ export class UsuarioService {
             }
           })
     });
+
+  }
+
+  guardarRut(rut: string){
+
+    this.rut=rut;
+
+  }
+
+  obtenerRut(){
+
+    return this.rut;
+
+  }
+
+  buscarInfoCliente(nombreUsuario: string): Observable<InfoCliente>{
+
+    return this.http.get<InfoCliente>(`${ URL }/cliente/buscar-info/${ nombreUsuario }`);
 
   }
 }

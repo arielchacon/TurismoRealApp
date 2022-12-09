@@ -91,6 +91,10 @@ const routes: Routes = [
     path: 'funcionario',
     loadChildren: () => import('./pages/funcionario/funcionario.module').then( m => m.FuncionarioPageModule)
   },
+  {
+    path: 'ver-reservas',
+    loadChildren: () => import('./pages/ver-reservas/ver-reservas.module').then( m => m.VerReservasPageModule)
+  },
 ];
 
 @NgModule({

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ActualizarReserva, Reserva, ReservaResponse, ReservaServicio, ReservaDepartamentoResponse, ReservaServicioResponse, CheckInResponse, CheckOutResponse, ActualizarCheckIn, ActualizarCheckOut } from '../interfaces/interfaces';
+import { ActualizarReserva, Reserva, ReservaResponse, ReservaServicio, ReservaDepartamentoResponse, ReservaServicioResponse, CheckInResponse, CheckOutResponse, ActualizarCheckIn, ActualizarCheckOut, ServicioTransporte, ReservaTransporteResponse } from '../interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -170,5 +170,32 @@ export class ReservaService {
     });
 
   }
+
+  crearReservaTransporte(reservaTransporte: ServicioTransporte){
+
+    return new Promise(resolve => {
+
+      this.http.post(`http://localhost:8888/servicios/crear-transporte`, reservaTransporte)
+      .subscribe(async resp => {
+
+        if(resp['ok']){
+          resolve(true);
+        }else{
+          resolve(false);
+        }
+      })
+
+    });
+
+
+  }
+
+  listarReservaTransporte(idReserva: number){
+
+    return this.http.get<ReservaTransporteResponse[]>(`http://localhost:8888/reservas/listar-reserva-transporte/${ idReserva }`);
+
+  }
+
+
 
 }

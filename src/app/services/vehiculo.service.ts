@@ -1,25 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Servicio, ServicioResponse, ActualizarServicio } from '../interfaces/interfaces';
+import { Vehiculo, VehiculoResponse } from '../interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ServicioService {
+export class VehiculoService {
 
   constructor(private http: HttpClient) { }
 
-  listarServicio(){
-
-    return this.http.get<ServicioResponse[]>(`http://localhost:8888/servicios/listar`);
-
-  }
-
-  crearServicio(servicio: Servicio){
+  crearVehiculo(vehiculo: Vehiculo){
 
     return new Promise(resolve => {
 
-      this.http.post(`http://localhost:8888/servicios/crear`, servicio)
+      this.http.post(`http://localhost:8888/vehiculo/crear`, vehiculo)
       .subscribe(async resp => {
 
         if(resp['ok']){
@@ -33,11 +27,11 @@ export class ServicioService {
 
   }
 
-  borrarServicio(idServicio: number){
+  actualizarVehiculo(vehiculo: VehiculoResponse){
 
     return new Promise(resolve => {
 
-      this.http.delete(`http://localhost:8888/servicios/borrar/${ idServicio }`)
+      this.http.put(`http://localhost:8888/vehiculo/actualizar`, vehiculo)
       .subscribe(async resp => {
 
         if(resp['ok']){
@@ -51,11 +45,17 @@ export class ServicioService {
 
   }
 
-  actualizarServicio(actualizarServicio: ActualizarServicio){
+  buscarVehiculo(patente: string){
+
+    return this.http.get<VehiculoResponse>(`http://localhost:8888/vehiculo/buscar/${ patente }`);
+
+  }
+
+  borrarVehiculo(idVehiculo: number){
 
     return new Promise(resolve => {
 
-      this.http.put(`http://localhost:8888/servicios/actualizar`, actualizarServicio)
+      this.http.delete(`http://localhost:8888/vehiculo/borrar/${ idVehiculo }`)
       .subscribe(async resp => {
 
         if(resp['ok']){
@@ -68,4 +68,11 @@ export class ServicioService {
     });
 
   }
+
+  listarVehiculos(){
+
+    return this.http.get<VehiculoResponse[]>(`http://localhost:8888/vehiculo/listar`)
+
+  }
+
 }

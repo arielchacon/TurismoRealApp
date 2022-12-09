@@ -21,6 +21,14 @@ export interface LoginUsuario {
     password: string;
 }
 
+export interface InfoCliente {
+
+    run: string;
+    nombreUsuario: string;
+    esFrecuente: boolean;
+
+}
+
 export interface Cliente {
 
     run: string;
@@ -439,6 +447,7 @@ export interface Reserva {
     runFuncionario: string;
     fechaCheckout: any;
     multa: number;
+    runCliente: string;
     idDepartamento: number;
 
 }
@@ -500,3 +509,29 @@ export interface Departamento {
 
 }
 
+export interface ServicioTransporte {
+
+    direccionDesde: string;
+    direccionHasta: string;
+    horaInicio: string;
+    fechaInicio: any;
+    monto: number;
+    estado: string;
+    idVehiculo: number;
+    idReserva: number;
+
+}
+
+export interface ReservaTransporteResponse {
+
+    idTransporte: number;
+    direccionDesde: string;
+    direccionHasta: string;
+    horaInicio: string;
+    fechaInicio: any;
+    monto: number;
+    estado: string;
+    idVehiculo: number;
+    idReserva: number;
+
+}

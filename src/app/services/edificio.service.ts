@@ -1,25 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Servicio, ServicioResponse, ActualizarServicio } from '../interfaces/interfaces';
+import { Edificio, ActualizarEdificio, EdificioResponse } from '../interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ServicioService {
+export class EdificioService {
 
   constructor(private http: HttpClient) { }
 
-  listarServicio(){
-
-    return this.http.get<ServicioResponse[]>(`http://localhost:8888/servicios/listar`);
-
-  }
-
-  crearServicio(servicio: Servicio){
+  crearEdificio(edificio: Edificio){
 
     return new Promise(resolve => {
 
-      this.http.post(`http://localhost:8888/servicios/crear`, servicio)
+      this.http.post(`http://localhost:8888/edificio/registrar`, edificio)
       .subscribe(async resp => {
 
         if(resp['ok']){
@@ -33,11 +27,11 @@ export class ServicioService {
 
   }
 
-  borrarServicio(idServicio: number){
+  actualizarEdificio(idEdificio: number, edificio: ActualizarEdificio){
 
     return new Promise(resolve => {
 
-      this.http.delete(`http://localhost:8888/servicios/borrar/${ idServicio }`)
+      this.http.put(`http://localhost:8888/edificio/actualizar/${ idEdificio }`, edificio)
       .subscribe(async resp => {
 
         if(resp['ok']){
@@ -51,11 +45,11 @@ export class ServicioService {
 
   }
 
-  actualizarServicio(actualizarServicio: ActualizarServicio){
+  borrarEdificio(idEdificio: number){
 
     return new Promise(resolve => {
 
-      this.http.put(`http://localhost:8888/servicios/actualizar`, actualizarServicio)
+      this.http.delete(`http://localhost:8888/edificio/borrar/${ idEdificio }`)
       .subscribe(async resp => {
 
         if(resp['ok']){
@@ -68,4 +62,11 @@ export class ServicioService {
     });
 
   }
+
+  listarEdificios(idComuna: number){
+
+    return this.http.get<EdificioResponse[]>(`http://localhost:8888/edificio/listar-edificios/${ idComuna }`);
+
+  }
+
 }

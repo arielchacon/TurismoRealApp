@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Componente } from './interfaces/interfaces';
+import { Componente, InfoCliente } from './interfaces/interfaces';
 import { DataService } from './services/data.service';
 import { TokenService } from './services/token.service';
+import { UsuarioService } from './services/usuario.service';
 
 @Component({
   selector: 'app-root',
@@ -16,10 +17,11 @@ export class AppComponent implements OnInit{
   isAdmin = false;
   isCliente = false;
   isEmpleado = false;
+  infoCliente: InfoCliente;
  
   componentes: Observable<Componente[]>;
   
-  constructor(private dataService: DataService, private tokenService: TokenService, private router: Router) {}
+  constructor(private dataService: DataService, private tokenService: TokenService, private usuarioService: UsuarioService, private router: Router) {}
   
   ngOnInit(): void {
 
@@ -32,6 +34,10 @@ export class AppComponent implements OnInit{
       } else if (this.tokenService.getAuthorities().indexOf('ROLE_CUSTOMER') !== -1){
         this.isCliente = true;
         this.componentes=this.dataService.getMenuClientOpts();
+        this.usuarioService.buscarInfoCliente(this.tokenService.getUserName()).subscribe(data => {
+          this.infoCliente = data;
+          this.usuarioService.guardarRut(this.infoCliente.run);
+        });
       } else if (this.tokenService.getAuthorities().indexOf('ROLE_EMPLOYEE') !== -1){
         this.isEmpleado = true;
         this.componentes=this.dataService.getMenuEmployeeOpts();
