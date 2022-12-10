@@ -32,10 +32,10 @@ export class RegistroReservaPage implements OnInit {
     fechaReserva: "1900-01-01",
     monto:0,
     estado:'',
-    fechaCheckin: "1900-01-01",
+    fechaCheckin: "",
     abono:0,
     runFuncionario:'',
-    fechaCheckout: "1900-01-01",
+    fechaCheckout: "",
     multa:0,
     runCliente:'',
     idDepartamento:0

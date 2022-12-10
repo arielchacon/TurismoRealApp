@@ -65,19 +65,7 @@ export class InventarioService {
 
   buscarInventario(idInventario: number){
 
-    return new Promise(resolve => {
-
-      this.http.get<InventarioResponse>(`http://localhost:8888/inventario/buscar/${ idInventario }`)
-      .subscribe(async resp => {
-
-        if(resp['ok']){
-          resolve(true);
-        }else{
-          resolve(false);
-        }
-      })
-
-    });
+    return this.http.get<InventarioResponse>(`http://localhost:8888/inventario/buscar/${ idInventario }`);
 
   }
 
@@ -101,19 +89,7 @@ export class InventarioService {
 
   listarObjetoInventario(idInventario: number){
 
-    return new Promise(resolve => {
-
-      this.http.get<InventarioObjetoResponse[]>(`http://localhost:8888/inventario/inventario-objeto/${ idInventario }`)
-      .subscribe(async resp => {
-
-        if(resp['ok']){
-          resolve(true);
-        }else{
-          resolve(false);
-        }
-      })
-
-    });
+    return this.http.get<InventarioObjetoResponse[]>(`http://localhost:8888/inventario/inventario-objeto/${ idInventario }`);
 
   }
 

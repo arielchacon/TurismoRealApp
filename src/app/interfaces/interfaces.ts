@@ -139,8 +139,7 @@ export interface ClienteResponse {
     fechaNacimiento: any;
     telefono: string;
     telefono2?: string;
-    correo: string;
-    esFrecuente: boolean;
+    correoElectronico: string;
     idComuna: number;
     nombreUsuario: string;
 
@@ -533,5 +532,23 @@ export interface ReservaTransporteResponse {
     estado: string;
     idVehiculo: number;
     idReserva: number;
+
+}
+
+export interface FuncionarioResponse {
+
+    run: string;
+    nombre: string;
+    apPaterno: string;
+    apMaterno: string;
+    genero: string;
+    direccion: string;
+    fechaNacimiento: any;
+    telefono: string;
+    correo: string;
+    cargo: string;
+    estado: string;
+    nombreUsuario: string;
+    idComuna: number;
 
 }

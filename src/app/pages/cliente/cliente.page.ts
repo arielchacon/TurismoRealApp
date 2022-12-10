@@ -23,8 +23,7 @@ export class ClientePage implements OnInit {
     fechaNacimiento: "1900-01-01",
     telefono:'',
     telefono2:'',
-    correo:'',
-    esFrecuente:false,
+    correoElectronico:'',
     idComuna:0,
     nombreUsuario:''
 
@@ -68,8 +67,7 @@ export class ClientePage implements OnInit {
     this.actualizar.fechaNacimiento = this.cliente.fechaNacimiento;
     this.actualizar.telefono = this.cliente.telefono;
     this.actualizar.telefono_2 = this.cliente.telefono2;
-    this.actualizar.correo = this.cliente.correo;
-    this.actualizar.esFrecuente = this.cliente.esFrecuente;
+    this.actualizar.correo = this.cliente.correoElectronico;
     this.actualizar.idComuna = this.cliente.idComuna;
 
     const valido = this.usuarioService.actualizarCliente(this.cliente.run, this.actualizar);

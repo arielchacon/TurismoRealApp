@@ -1,9 +1,65 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>funcionario</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header titulo="Informacion Personal"></app-header>
+<ion-content class="ion-padding">
 
-<ion-content>
+  <form (ngSubmit)="actualizarFuncionario( fActualizar )" #fActualizar="ngForm">
 
+    <ion-item fill="outline">
+      <ion-label position="floating">Nombres</ion-label>
+      <ion-input name="nombre" type="text" placeholder="Nombres" [(ngModel)]="funcionario.nombre" disabled="true"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">Apellido Paterno</ion-label>
+      <ion-input name="apPaterno" type="text" placeholder="Apellido paterno" [(ngModel)]="funcionario.apPaterno" disabled="true"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">Apellido Materno</ion-label>
+      <ion-input name="apMaterno" type="text" placeholder="Apellido materno" [(ngModel)]="funcionario.apMaterno" disabled="true"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">RUN</ion-label>
+      <ion-input name="run" type="text" placeholder="11.111.111-1" [(ngModel)]="funcionario.run" disabled="true"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">Genero</ion-label>
+      <ion-input name="genero" type="text" placeholder="" [(ngModel)]="funcionario.genero"  disabled="true"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">Fecha de Nacimiento</ion-label>
+      <ion-input name="fechaNacimiento" type="text" placeholder="" [(ngModel)]="funcionario.fechaNacimiento" disabled="true"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">Direccion</ion-label>
+      <ion-input name="direccion" type="text" placeholder="Direccion" [(ngModel)]="funcionario.direccion" disabled="true"></ion-input>
+    </ion-item>
+    <br>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">Telefono</ion-label>
+      <ion-input name="telefono" type="text" placeholder="+5699999999" [(ngModel)]="funcionario.telefono" ></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">Cargo</ion-label>
+      <ion-input name="telefono2" type="text" placeholder="Cargo" [(ngModel)]="funcionario.cargo" ></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">Correo electrónico</ion-label>
+      <ion-input name="correo" type="email" placeholder="ejemplo@mail.com" [(ngModel)]="funcionario.correo" ></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">Nombre de usuario</ion-label>
+      <ion-input name="nombreUsuario" type="text" placeholder="Nombre de usuario" [(ngModel)]="funcionario.nombreUsuario" disabled="true"></ion-input>
+    </ion-item>
+    <br>
+    <ion-button type="submit" expand="block">Actualizar</ion-button>
+  </form>
+ 
 </ion-content>

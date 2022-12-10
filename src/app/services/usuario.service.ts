@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Cliente, JwtModel, LoginUsuario, Funcionario, InfoCliente, ClienteResponse, ActualizarCliente } from '../interfaces/interfaces';
+import { Cliente, JwtModel, LoginUsuario, Funcionario, InfoCliente, ClienteResponse, ActualizarCliente, ActualizarFuncionario, FuncionarioResponse } from '../interfaces/interfaces';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
@@ -73,6 +73,23 @@ export class UsuarioService {
 
   }
 
+  actualizarFuncionario (runFuncionario: string, funcionario: ActualizarFuncionario){
+
+    return new Promise( resolve => {
+
+      this.http.put(`${ URL }/funcionario/actualizar/${ runFuncionario }`, funcionario)
+          .subscribe(async resp => {
+            if(resp['ok']){
+              resolve(true);
+            }else{
+              resolve(false);
+            }
+          })
+    });
+
+
+  }
+
   guardarRut(rut: string){
 
     this.rut=rut;
@@ -94,6 +111,12 @@ export class UsuarioService {
   buscarCliente(nombreUsuario: string): Observable<ClienteResponse>{
 
     return this.http.get<ClienteResponse>(`${ URL }/cliente/buscar/${ nombreUsuario }`);
+
+  }
+
+  buscarFuncionario(nombreUsuario: string): Observable<FuncionarioResponse> {
+
+    return this.http.get<FuncionarioResponse>(`${ URL }/funcionario/buscar/${ nombreUsuario }`);
 
   }
 }
