@@ -15,16 +15,6 @@ import { NgForm } from '@angular/forms';
 })
 export class CambiarReservaPage implements OnInit {
 
-  regiones: Observable<Region[]>;
-  region: any;
-  provincias: Observable<Provincia[]>;
-  provincia: any;
-  comunas: Observable<Comuna[]>;
-  comuna: any;
-  edificios: Observable<EdificioResponse[]>
-  edificio: any;
-  departamentos: Observable<DepartamentoResponse[]>
-  departamento: any;
   idReserva: number;
   reserva: ReservaResponse = {
 

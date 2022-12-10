@@ -7,6 +7,7 @@ import { EdificioService } from 'src/app/services/edificio.service';
 import { ReservaService } from 'src/app/services/reserva.service';
 import { DepartamentoService } from '../../services/departamento.service';
 import { NgForm } from '@angular/forms';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-registro-reserva',
@@ -48,6 +49,7 @@ export class RegistroReservaPage implements OnInit {
     public departamentoService: DepartamentoService,
     public reservaService: ReservaService,
     private alertController: AlertController,
+    private usuarioService: UsuarioService,
     private navCtrl: NavController) { }
 
   ngOnInit() {
@@ -110,6 +112,8 @@ export class RegistroReservaPage implements OnInit {
     this.reserva.monto = this.departamento.valor;
     this.reserva.estado = "Creado";
     this.reserva.runFuncionario = "11111111-1";
+    this.reserva.runCliente = this.usuarioService.obtenerRut();
+    this.reserva.idDepartamento = this.departamento;
     
     const valido = this.reservaService.crearReserva(this.reserva);
 

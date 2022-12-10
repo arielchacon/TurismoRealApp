@@ -5,7 +5,7 @@
   <form (ngSubmit)="buscarReserva(fBuscar)" #fBuscar="ngForm">
     <ion-item fill="outline">
       <ion-label position="floating">ID Reserva</ion-label>
-      <ion-input name="idReserva" type="text" placeholder="1900-01-01" [(ngModel)]="reserva.idReserva"></ion-input>
+      <ion-input name="idReserva" type="text" placeholder="0" [(ngModel)]="reserva.idReserva"></ion-input>
     </ion-item>
     <br>
     <ion-button type="submit" expand="block">Buscar</ion-button>

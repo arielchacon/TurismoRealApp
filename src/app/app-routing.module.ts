@@ -72,10 +72,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/registro-mantencion/registro-mantencion.module').then( m => m.RegistroMantencionPageModule)
   },
   {
-    path: 'agregar-objeto',
-    loadChildren: () => import('./pages/agregar-objeto/agregar-objeto.module').then( m => m.AgregarObjetoPageModule)
-  },
-  {
     path: 'registro-inventario',
     loadChildren: () => import('./pages/registro-inventario/registro-inventario.module').then( m => m.RegistroInventarioPageModule)
   },
@@ -98,6 +94,14 @@ const routes: Routes = [
   {
     path: 'cambiar-reserva',
     loadChildren: () => import('./pages/cambiar-reserva/cambiar-reserva.module').then( m => m.CambiarReservaPageModule)
+  },
+  {
+    path: 'ver-checkin',
+    loadChildren: () => import('./pages/ver-checkin/ver-checkin.module').then( m => m.VerCheckinPageModule)
+  },
+  {
+    path: 'ver-checkout',
+    loadChildren: () => import('./pages/ver-checkout/ver-checkout.module').then( m => m.VerCheckoutPageModule)
   },
 ];
 

@@ -1,0 +1,18 @@
+<app-header titulo="Ver Check-In"></app-header>
+<ion-content class="ion-padding">
+
+    <ion-list>
+  
+        <ion-item *ngFor="let checkin of checkins | async">
+    
+            <ion-label>
+                <h3>ID Reserva: {{checkin.idReserva}}</h3>
+                <p>{{checkin.fecha}} </p>
+            </ion-label>
+            <ion-label>${{checkin.abono}}</ion-label>
+    
+        </ion-item>
+    
+    </ion-list>
+  
+  </ion-content>

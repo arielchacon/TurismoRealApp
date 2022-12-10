@@ -71,5 +71,5 @@
 {
     "icon": "exit-outline",
     "name": "Cerrar sesión",
-    "redirectTo":"/logout"
+    "redirectTo":"/login"
 }]

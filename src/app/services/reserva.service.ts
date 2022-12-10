@@ -112,13 +112,13 @@ export class ReservaService {
 
   }
 
-  buscarCheckIn(idReserva: number){
+  buscarCheckIn(idReserva: number): Observable<CheckInResponse>{
 
     return this.http.get<CheckInResponse>(`http://localhost:8888/reservas/buscar-check-in/${ idReserva }`);
 
   }
 
-  buscarCheckOut(idReserva: number){
+  buscarCheckOut(idReserva: number): Observable<CheckOutResponse>{
 
     return this.http.get<CheckOutResponse>(`http://localhost:8888/reservas/buscar-check-out/${ idReserva }`);
 

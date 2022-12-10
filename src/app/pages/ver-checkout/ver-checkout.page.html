@@ -1,0 +1,18 @@
+<app-header titulo="Ver Check-Out"></app-header>
+<ion-content class="ion-padding">
+
+    <ion-list>
+  
+        <ion-item *ngFor="let checkout of checkouts | async">
+    
+            <ion-label>
+                <h3>ID Reserva: {{checkout.idReserva}}</h3>
+                <p>{{checkout.fecha}} </p>
+            </ion-label>
+            <ion-label>${{checkout.multa}}</ion-label>
+    
+        </ion-item>
+    
+    </ion-list>
+  
+  </ion-content>

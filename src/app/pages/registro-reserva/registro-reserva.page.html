@@ -3,11 +3,6 @@
 
     <form (ngSubmit)="registrarReserva( fRegistro )" #fRegistro="ngForm">
         <ion-item fill="outline">
-            <ion-label position="floating">RUN</ion-label>
-            <ion-input name="run" type="text" placeholder="11111111-1" [(ngModel)]="reserva.runCliente"></ion-input>
-        </ion-item>
-        <br>
-        <ion-item fill="outline">
             <ion-label position="floating">Fecha Check-in</ion-label>
             <ion-input name="fechaCheckin" type="text" placeholder="1900-01-01" [(ngModel)]="reserva.fechaCheckin"></ion-input>
         </ion-item>

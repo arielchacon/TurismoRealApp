@@ -1,5 +1,34 @@
 <app-header titulo="Check-In"></app-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+
+    <form (ngSubmit)="buscarCheckIn(fBuscar)" #fBuscar="ngForm">
+        <ion-item fill="outline">
+          <ion-label position="floating">ID Reserva</ion-label>
+          <ion-input name="idReserva" type="text" placeholder="0" [(ngModel)]="checkIn.idReserva"></ion-input>
+        </ion-item>
+        <br>
+        <ion-button type="submit" expand="block">Buscar</ion-button>
+      </form>
+      <br>
+      <br>
+      <form (ngSubmit)="actualizarCheckIn( fActualizar )" #fActualizar="ngForm">
+        <ion-item fill="outline">
+          <ion-label position="stacked">Fecha Check-In</ion-label>
+          <ion-input name="fechaReserva" type="text" placeholder="1900-01-01" [(ngModel)]="checkIn.fecha"></ion-input>
+        </ion-item>
+        <br>
+        <ion-item fill="outline">
+          <ion-label position="stacked">Abono</ion-label>
+          <ion-input name="abono" type="text" placeholder="0" [(ngModel)]="checkIn.abono"></ion-input>
+        </ion-item>
+        <br>
+        <ion-item fill="outline">
+          <ion-label position="stacked">Run funcionario</ion-label>
+          <ion-input name="runFuncionario" type="text" placeholder="11111111-1" [(ngModel)]="checkIn.runFuncionario"></ion-input>
+        </ion-item>
+        <ion-button type="submit" expand="block">Actualizar</ion-button>
+    
+      </form>
 
 </ion-content>

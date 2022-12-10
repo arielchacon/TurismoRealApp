@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AgregarObjetoPageRoutingModule } from './agregar-objeto-routing.module';
+import { VerCheckoutPageRoutingModule } from './ver-checkout-routing.module';
 
-import { AgregarObjetoPage } from './agregar-objeto.page';
+import { VerCheckoutPage } from './ver-checkout.page';
 import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { ComponentsModule } from 'src/app/components/components.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    AgregarObjetoPageRoutingModule,
+    VerCheckoutPageRoutingModule,
     ComponentsModule
   ],
-  declarations: [AgregarObjetoPage]
+  declarations: [VerCheckoutPage]
 })
-export class AgregarObjetoPageModule {}
+export class VerCheckoutPageModule {}

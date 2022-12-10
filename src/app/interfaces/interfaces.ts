@@ -141,7 +141,7 @@ export interface ClienteResponse {
     telefono2?: string;
     correo: string;
     esFrecuente: boolean;
-    idComune: number;
+    idComuna: number;
     nombreUsuario: string;
 
 }

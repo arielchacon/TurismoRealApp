@@ -9,6 +9,16 @@
     "redirectTo":"/cambiar-checkout"
 },
 {
+    "icon": "calendar-outline",
+    "name": "Ver Check-In",
+    "redirectTo":"/ver-checkin"
+},
+{
+    "icon": "calendar-number-outline",
+    "name": "Ver Check-Out",
+    "redirectTo":"/ver-checkout"
+},
+{
     "icon": "home-outline",
     "name": "Ver departamentos",
     "redirectTo":"/ver-edificios"
@@ -31,5 +41,5 @@
 {
     "icon": "exit-outline",
     "name": "Cerrar sesión",
-    "redirectTo":"/logout"
+    "redirectTo":"/login"
 }]
