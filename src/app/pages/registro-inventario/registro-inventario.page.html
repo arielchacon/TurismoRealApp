@@ -1,9 +1,28 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>registro-inventario</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header titulo="Agregar inventario"></app-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+  <form (ngSubmit)="guardarInventario( fRegistro )" #fRegistro="ngForm">
+  <ion-item fill="outline">
+    <ion-label position="floating">Observacion</ion-label>
+    <ion-input name="observacion" type="text" placeholder="Observacion" [(ngModel)]="inventario.observacion" ></ion-input>
+  </ion-item>
+  <br>
+  <ion-item fill="outline">
+    <ion-label position="floating">Fecha inventario</ion-label>
+    <ion-input name="fechaInventario" type="text" placeholder="1900-01-01" [(ngModel)]="inventario.fechaInventario" ></ion-input>
+  </ion-item>
+  <br>
+  <ion-item fill="outline">
+    <ion-label position="floating">Estado</ion-label>
+    <ion-input name="estado" type="text" placeholder="Estado" [(ngModel)]="inventario.estado" ></ion-input>
+  </ion-item>
+  <br>
+  <ion-item fill="outline">
+    <ion-label position="floating">Id departamento</ion-label>
+    <ion-input name="idDepartamento" type="text" placeholder="0" [(ngModel)]="inventario.idDepartamento" ></ion-input>
+  </ion-item>
+  <br>
+  <ion-button type="submit" expand="block">Registrar</ion-button>
+</form>
 
 </ion-content>

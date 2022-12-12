@@ -1,9 +1,33 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>registro-mantencion</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header titulo="Ver Check-In"></app-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+  <form (ngSubmit)="agregarMantenimiento( fRegistro )" #fRegistro="ngForm">
+  <ion-item fill="outline">
+    <ion-label position="floating">Descripcion</ion-label>
+    <ion-input name="descripcion" type="text" placeholder="Descripcion" [(ngModel)]="mantencion.descripcion" ></ion-input>
+  </ion-item>
+  <br>
+  <ion-item fill="outline">
+    <ion-label position="floating">Estado</ion-label>
+    <ion-input name="estado" type="text" placeholder="Estado" [(ngModel)]="mantencion.estado" ></ion-input>
+  </ion-item>
+  <br>
+  <ion-item fill="outline">
+    <ion-label position="floating">Fecha inventario</ion-label>
+    <ion-input name="fechaMantencion" type="text" placeholder="1900-01-01" [(ngModel)]="mantencion.fechaMantencion" ></ion-input>
+  </ion-item>
+  <br>
+  <ion-item fill="outline">
+    <ion-label position="floating">Estado</ion-label>
+    <ion-input name="costo" type="text" placeholder="0" [(ngModel)]="mantencion.costo" ></ion-input>
+  </ion-item>
+  <br>
+  <ion-item fill="outline">
+    <ion-label position="floating">Id departamento</ion-label>
+    <ion-input name="idDepartamento" type="text" placeholder="0" [(ngModel)]="mantencion.idDepartamento" ></ion-input>
+  </ion-item>
+  <br>
+  <ion-button type="submit" expand="block">Registrar</ion-button>
+</form>
 
 </ion-content>

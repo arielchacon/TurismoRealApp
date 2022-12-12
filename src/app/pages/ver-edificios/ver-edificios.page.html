@@ -1,9 +1,44 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>ver-edificios</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header titulo="Ver edificios"></app-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+
+  <ion-item fill="outline">
+    <ion-label>Region</ion-label>
+    <ion-select name="region" placeholder="Region" [(ngModel)]="region" (ionChange)="setValueProvincia()">
+      <ion-select-option *ngFor="let region of (regiones | async)"
+        [value]="region.idRegion">{{region.nombre}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <br>
+  <ion-item fill="outline">
+    <ion-label>Provincia</ion-label>
+    <ion-select name="provincia" placeholder="Provincia" [(ngModel)]="provincia" (ionChange)="setValueComuna()">
+      <ion-select-option *ngFor="let provincia of (provincias | async)"
+        value="{{provincia.idProvincia}}">{{provincia.nombre}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <br>
+  <ion-item fill="outline">
+    <ion-label>Comuna</ion-label>
+    <ion-select name="comuna" placeholder="Comuna" [(ngModel)]="comuna">
+      <ion-select-option *ngFor="let comuna of (comunas | async)"
+        [value]="comuna.idComuna">{{comuna.nombre}}</ion-select-option>
+    </ion-select>
+    <ion-button type="submit" expand="block">Listar</ion-button>
+  </ion-item>
+  <ion-list *ngIf="edificios">
+  
+    <ion-item *ngFor="let edificio of edificios | async">
+
+        <ion-label>
+            <h3>ID: {{edificio.idEdificio}}</h3>
+            <h2>{{edificio.nombre}}</h2>
+            <p>{{edificio.direccion}}</p>
+        </ion-label>
+        <ion-label>${{edificio.estado}}</ion-label>
+
+    </ion-item>
+
+</ion-list>
 
 </ion-content>

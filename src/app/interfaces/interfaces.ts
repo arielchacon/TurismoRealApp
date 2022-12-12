@@ -153,7 +153,7 @@ export interface DepartamentoResponse {
     numBanios: number;
     estado: string;
     valor: number;
-    imagen: any;
+    imagen?: any;
     dividendo: number;
     contribucion: number;
     disponibilidad: string;
@@ -424,7 +424,7 @@ export interface Mantenimiento {
     estado: string;
     fechaMantencion: any;
     costo: number;
-    idMantenimiento: number;
+    idDepartamento: number;
 
 }
 
@@ -499,7 +499,7 @@ export interface Departamento {
     numBanios: number;
     estado: string;
     valor: number;
-    imagen: any;
+    imagen?: any;
     dividendo: number;
     contribucion: number;
     disponibilidad: string;

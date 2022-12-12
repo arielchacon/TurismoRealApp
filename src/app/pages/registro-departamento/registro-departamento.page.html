@@ -1,9 +1,82 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>registro-departamento</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header titulo="Ingresar departamento"></app-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+
+  <form (ngSubmit)="agregarDepartamento( fRegistro )" #fRegistro="ngForm">
+
+    <ion-item fill="outline">
+      <ion-label>Region</ion-label>
+      <ion-select name="region" placeholder="Region" [(ngModel)]="region" (ionChange)="setValueProvincia()">
+        <ion-select-option *ngFor="let region of (regiones | async)"
+          [value]="region.idRegion">{{region.nombre}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label>Provincia</ion-label>
+      <ion-select name="provincia" placeholder="Provincia" [(ngModel)]="provincia" (ionChange)="setValueComuna()">
+        <ion-select-option *ngFor="let provincia of (provincias | async)"
+          value="{{provincia.idProvincia}}">{{provincia.nombre}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label>Comuna</ion-label>
+      <ion-select name="comuna" placeholder="Comuna" [(ngModel)]="comuna" (ionChange)="setValueEdificio()">
+        <ion-select-option *ngFor="let comuna of (comunas | async)"
+          [value]="comuna.idComuna">{{comuna.nombre}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label>Edificio</ion-label>
+      <ion-select name="edificio" placeholder="Edificio" [(ngModel)]="edificio">
+        <ion-select-option *ngFor="let edificio of (edificios | async)"
+          [value]="edificio.idEdificio">{{edificio.nombre}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">N° Departamento</ion-label>
+      <ion-input name="numDepto" type="text" placeholder="0" [(ngModel)]="departamento.numDepto"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">N° Habitaciones</ion-label>
+      <ion-input name="numHabitaciones" type="text" placeholder="0" [(ngModel)]="departamento.numHabitaciones"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">N° Baños</ion-label>
+      <ion-input name="numBanios" type="text" placeholder="0" [(ngModel)]="departamento.numBanios"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">Estado</ion-label>
+      <ion-input name="estado" type="text" placeholder="0" [(ngModel)]="departamento.estado"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">Valor</ion-label>
+      <ion-input name="valor" type="text" placeholder="0" [(ngModel)]="departamento.valor"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">Dividendo</ion-label>
+      <ion-input name="dividendo" type="text" placeholder="0" [(ngModel)]="departamento.dividendo"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">Contribucion</ion-label>
+      <ion-input name="contribucion" type="text" placeholder="0" [(ngModel)]="departamento.contribucion"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline">
+      <ion-label position="floating">Disponibilidad</ion-label>
+      <ion-input name="disponibilidad" type="text" placeholder="0" [(ngModel)]="departamento.disponibilidad"></ion-input>
+    </ion-item>
+    <br>
+    <ion-button type="submit" expand="block">Registrar</ion-button>
+  </form>
 
 </ion-content>
