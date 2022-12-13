@@ -24,8 +24,7 @@ export class VerEdificiosPage implements OnInit {
 
   ngOnInit() {
 
-    this.regiones = this.direccionService.obtenerRegion();
-
+    this.edificios = this.edificioService.listar();
   }
 
   setValueProvincia() {
@@ -42,7 +41,7 @@ export class VerEdificiosPage implements OnInit {
 
   listarEdificios(fListar: NgForm){
 
-    this.edificios = this.edificioService.listarEdificios(this.comuna);
+    this.edificios = this.edificioService.listar();
 
   }
 

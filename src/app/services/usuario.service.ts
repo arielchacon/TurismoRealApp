@@ -29,7 +29,7 @@ export class UsuarioService {
 
     return new Promise( resolve => {
 
-      this.http.post(`${ URL }/usuario/registrar`, cliente)
+      this.http.post(`${ URL }/usuario/registrar`, cliente, cabecera)
           .subscribe(async resp => {
             if(resp['ok']){
               resolve(true);

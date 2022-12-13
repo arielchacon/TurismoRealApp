@@ -69,4 +69,10 @@ export class EdificioService {
 
   }
 
+  listar(){
+
+    return this.http.get<EdificioResponse[]>(`http://localhost:8888/edificio/listar`);
+
+  }
+
 }

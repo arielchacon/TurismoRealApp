@@ -20,7 +20,7 @@
 },
 {
     "icon": "home-outline",
-    "name": "Ver departamentos",
+    "name": "Ver edificios",
     "redirectTo":"/ver-edificios"
 },
 {

@@ -109,7 +109,7 @@ export class RegistroReservaPage implements OnInit {
 
     this.reserva.cantDepartamento = 1;
     this.reserva.fechaReserva = this.formatDate(new Date());
-    this.reserva.monto = this.departamento.valor;
+    this.reserva.monto = 150000;
     this.reserva.estado = "Creado";
     this.reserva.runFuncionario = "11111111-1";
     this.reserva.runCliente = this.usuarioService.obtenerRut();

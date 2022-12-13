@@ -24,8 +24,8 @@ export class RegistroClientePage implements OnInit {
   cliente: Cliente = {
     run: '',
     nombre: '',
-    apPaterno: '',
-    apMaterno: '',
+    appaterno: '',
+    apmaterno: '',
     genero: '',
     direccion: '',
     fechaNacimiento: "1900-01-01",

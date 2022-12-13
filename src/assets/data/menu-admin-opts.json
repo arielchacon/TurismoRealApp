@@ -1,9 +1,4 @@
 [{
-    "icon": "home-outline",
-    "name": "Ver departamentos",
-    "redirectTo":"/ver-edificios"
-},
-{
     "icon": "business-outline",
     "name": "Agregar edificio",
     "redirectTo":"/edificios"
@@ -19,14 +14,14 @@
     "redirectTo":"/servicios"
 },
 {
-    "icon": "fast-food-outline",
-    "name": "Ver servicios",
-    "redirectTo":"/ver-servicios"
+    "icon": "calendar-outline",
+    "name": "Cambiar Check-In",
+    "redirectTo":"/cambiar-checkin"
 },
 {
-    "icon": "calendar-outline",
-    "name": "Realizar Check-In",
-    "redirectTo":"/registro-reserva"
+    "icon": "calendar-number-outline",
+    "name": "Cambiar Check-Out",
+    "redirectTo":"/cambiar-checkout"
 },
 {
     "icon": "calendar-number-outline",
